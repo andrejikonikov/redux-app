@@ -1,0 +1,49 @@
+$primary-color: #27ad8a
+$secondary-color: red
+$border-color: #ccc
+$white-color: #fff
+$shadow-light: rgba($white-color, 0.83)
+$shadow-dark: rgba(217,210,200,0.51)
+
+.form
+  &__card
+    border-radius: 8px
+    padding: 32px
+    display: flex
+    flex-flow: column
+    box-shadow: -6px -6px 26px 0 $shadow-light, 6px 6px 16px 0 $shadow-dark
+
+  &__input-container
+    width: 200px
+    position: relative
+
+  &__action,
+  &__input
+    border: 0
+    padding: 10px 0
+
+  &__action
+    background: $primary-color
+    color: $white-color
+    cursor: pointer
+    border-radius: 4px
+
+  &__input
+    width: 100%
+    border-bottom: 1px solid $border-color
+
+    ~ .form__input-border
+      position: absolute
+      bottom: 16px
+      left: 0
+      width: 0
+      height: 2px
+      background-color: $primary-color
+
+      &--red
+        background-color: $secondary-color
+
+    &:focus
+      ~ .form__input-border
+        width: 100%
+        transition: 0.5s
